@@ -9,7 +9,7 @@ import {StandardResponse} from "../model/standard-response";
 })
 export class BackendService {
 
-  baseUrl = environment.serverUrl;
+  private baseUrl = environment.serverUrl;
 
   constructor(private http: HttpClient) {
   }

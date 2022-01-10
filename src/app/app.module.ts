@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './components/header/header.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { EntryPageComponent } from './components/entry-page/entry-page.component';
-import { UsersComponent } from './components/users/users.component';
-import { TweetsComponent } from './components/tweets/tweets.component';
-import { PlacesComponent } from './components/places/places.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HeaderComponent} from './components/header/header.component';
+import {SideMenuComponent} from './components/side-menu/side-menu.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {EntryPageComponent} from './components/entry-page/entry-page.component';
+import {UsersComponent} from './components/users/users.component';
+import {TweetsComponent} from './components/tweets/tweets.component';
+import {PlacesComponent} from './components/places/places.component';
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { PlacesComponent } from './components/places/places.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

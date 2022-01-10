@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BackendService} from "../../service/backend.service";
 
 @Component({
   selector: 'app-users',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private beService: BackendService) {
+  }
 
   ngOnInit(): void {
   }
 
+
+  allVerifiedVisitors(): void {
+    this.beService.allVerifiedVisitors().subscribe((data) => {
+
+    });
+  }
+
+  allVisitors(): void {
+    this.beService.allVisitors().subscribe((data) => {
+
+    });
+  }
+
+  allVisitorsByDay(): void {
+    this.beService.allVisitorsByDay().subscribe((data) => {
+
+    });
+  }
 }
