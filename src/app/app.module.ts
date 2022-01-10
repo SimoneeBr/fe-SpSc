@@ -13,6 +13,7 @@ import {TweetsComponent} from './components/tweets/tweets.component';
 import {PlacesComponent} from './components/places/places.component';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
+import {NgxChartsModule} from "@swimlane/ngx-charts";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

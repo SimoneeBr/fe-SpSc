@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from "../../service/backend.service";
+import {LegendPosition} from "@swimlane/ngx-charts";
 
 @Component({
   selector: 'app-tweets',
@@ -8,15 +9,39 @@ import {BackendService} from "../../service/backend.service";
 })
 export class TweetsComponent implements OnInit {
 
+  // options
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showLabels: boolean = true;
+  legendPosition = LegendPosition.Right;
+  view: [number, number] = [1500, 620]; //for monitor
+
+  loading = [true, true, true, true, true, true, true, true, true]; //FIXME populate this array in constructor
+
+  pieChartObject: any[] = [];
+
   constructor(private beService: BackendService) {
+
   }
 
   ngOnInit(): void {
   }
 
   deviceOfTweets(): void {
-    this.beService.deviceOfTweets().subscribe((data) => {
-
+    this.loading[0] = true;
+    this.beService.deviceOfTweets().subscribe((response) => {
+      let data = response.data;
+      this.pieChartObject[0] = [];
+      for (const d of data) {
+        let x = JSON.parse(d);
+        let obj = {
+          "name": x.source,
+          "value": x.count
+        };
+        this.pieChartObject[0].push(obj);
+      }
+      this.loading[0] = false;
+      console.log(this.pieChartObject[0]);
     });
   }
 

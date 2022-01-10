@@ -1,5 +1,5 @@
 export class StandardResponse {
-  status: number;
-  message: string;
-  data: any;
+  status: number = -1;
+  message: string = "";
+  data: any[] = [];
 }
