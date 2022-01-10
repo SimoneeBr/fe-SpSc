@@ -1,0 +1,18 @@
+.a-custom {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  font-size: 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+}
