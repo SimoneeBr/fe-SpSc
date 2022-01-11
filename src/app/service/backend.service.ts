@@ -22,8 +22,18 @@ export class BackendService {
     return this.http.get<StandardResponse>(this.baseUrl + "/allVisitorsByDay");
   }
 
+  public allVisitorsByDayWithoutGeo(): Observable<StandardResponse> {
+    //TODO fare grafico di questa query
+    return this.http.get<StandardResponse>(this.baseUrl + "/allVisitorsByDayWithoutGeo");
+  }
+
   public tweetsNLP(): Observable<StandardResponse> {
+    //TODO chiamare API e inserire hardcoded i dati reali
     return this.http.get<StandardResponse>(this.baseUrl + "/tweetsNLP");
+  }
+
+  public valByID(param: string): Observable<StandardResponse> {
+    return this.http.get<StandardResponse>(this.baseUrl + "/valByID/" + param);
   }
 
   public countryOfTweets(): Observable<StandardResponse> {

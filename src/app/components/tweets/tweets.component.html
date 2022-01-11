@@ -25,6 +25,7 @@
                             [legendPosition]="legendPosition"
                             [labels]="showLabels"
                             [trimLabels]="false"
+                            (select)="valByID($event)"
       >
       </ngx-charts-pie-chart>
     </ng-template>
@@ -40,6 +41,7 @@
                             [legendPosition]="legendPosition"
                             [labels]="showLabels"
                             [trimLabels]="false"
+                            (select)="valByID($event)"
       >
       </ngx-charts-pie-chart>
     </ng-template>
@@ -55,6 +57,7 @@
                             [legendPosition]="legendPosition"
                             [labels]="showLabels"
                             [trimLabels]="false"
+                            (select)="valByID($event)"
       >
       </ngx-charts-pie-chart>
     </ng-template>
@@ -70,6 +73,7 @@
                             [legendPosition]="legendPosition"
                             [labels]="showLabels"
                             [trimLabels]="false"
+                            (select)="valByID($event)"
       >
       </ngx-charts-pie-chart>
     </ng-template>
@@ -77,13 +81,14 @@
   <ngb-panel id="toggle-6" title="Most Frequent Hashtag" (shown)="mostFrequentHashtag()" (hidden)="loading[5]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-number-card *ngIf="!loading[5]"
-        [view]="view"
-        [scheme]="colorScheme[5]"
-        [results]="chartObject[5]">
+                              [view]="view"
+                              [scheme]="colorScheme[5]"
+                              [results]="chartObject[5]">
       </ngx-charts-number-card>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-7" title="All Tweets By Verified Visitors" (shown)="allTweetsByVerifiedVisitor()" (hidden)="loading[6]=true">
+  <ngb-panel id="toggle-7" title="All Tweets By Verified Visitors" (shown)="allTweetsByVerifiedVisitor()"
+             (hidden)="loading[6]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-linear-gauge
         *ngIf="!loading[6]"

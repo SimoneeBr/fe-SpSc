@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {BackendService} from "../../service/backend.service";
 import {LegendPosition} from "@swimlane/ngx-charts";
 import {Constants} from "../../utils/constants";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbdModalContentComponent} from "../ngbd-modal-content/ngbd-modal-content.component";
+
 
 @Component({
   selector: 'app-tweets',
@@ -28,7 +31,9 @@ export class TweetsComponent implements OnInit {
 
   colorScheme = Constants.colorScheme;
 
-  constructor(private beService: BackendService) {
+  currentTweet: any;
+
+  constructor(private beService: BackendService, private modalService: NgbModal) {
     this.loading = new Array(9).fill(true);
   }
 
@@ -60,7 +65,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": "Tweet ID:  " + x.tweet_id,
+          "name": "Tweet ID: " + x.tweet_id,
           "value": x.pm_like_count
         };
         this.chartObject[1].push(obj);
@@ -77,7 +82,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": "Tweet ID:  " + x.tweet_id,
+          "name": "Tweet ID: " + x.tweet_id,
           "value": x.pm_retweet_count
         };
         this.chartObject[2].push(obj);
@@ -94,7 +99,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": "Tweet ID:  " + x.tweet_id,
+          "name": "Tweet ID: " + x.tweet_id,
           "value": x.pm_quote_count
         };
         this.chartObject[3].push(obj);
@@ -111,7 +116,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": "Tweet ID:  " + x.tweet_id,
+          "name": "Tweet ID: " + x.tweet_id,
           "value": x.pm_reply_count
         };
         this.chartObject[4].push(obj);
@@ -178,6 +183,27 @@ export class TweetsComponent implements OnInit {
     // this.beService.tweetsNLP().subscribe((response) => {
     //
     // });
+  }
+
+  valByID($event): void {
+    let id = $event.name.split(" ")[2]
+    this.beService.valByID(id).subscribe((response) => {
+      let obj = JSON.parse(response.data[0]);
+      this.currentTweet = {
+        "id": obj.id,
+        "created_at": obj.created_at,
+        "author_id": obj.author_id,
+        "text": obj.text,
+        "lang": obj.lang,
+        "source": obj.source
+      };
+      this.open();
+    });
+  }
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContentComponent);
+    modalRef.componentInstance.tweet = this.currentTweet;
   }
 
 }
