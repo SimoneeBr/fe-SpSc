@@ -15,8 +15,8 @@ export class TweetsComponent implements OnInit {
   showLegend: boolean = true;
   showLabels: boolean = true;
   legendPosition = LegendPosition.Right;
-  view: [number, number] = [1500, 620]; //for monitor
-  reducedView: [number, number] = [1500, 300]; //for monitor
+  view = Constants.view; //for monitor
+  reducedView = Constants.reducedView; //for monitor
 
   loading = [];
 
@@ -60,7 +60,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": x.tweet_id,
+          "name": "Tweet ID:  " + x.tweet_id,
           "value": x.pm_like_count
         };
         this.chartObject[1].push(obj);
@@ -77,7 +77,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": x.tweet_id,
+          "name": "Tweet ID:  " + x.tweet_id,
           "value": x.pm_retweet_count
         };
         this.chartObject[2].push(obj);
@@ -94,7 +94,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": x.tweet_id,
+          "name": "Tweet ID:  " + x.tweet_id,
           "value": x.pm_quote_count
         };
         this.chartObject[3].push(obj);
@@ -111,7 +111,7 @@ export class TweetsComponent implements OnInit {
       for (const d of data) {
         let x = JSON.parse(d);
         let obj = {
-          "name": x.tweet_id,
+          "name": "Tweet ID:  " + x.tweet_id,
           "value": x.pm_reply_count
         };
         this.chartObject[4].push(obj);

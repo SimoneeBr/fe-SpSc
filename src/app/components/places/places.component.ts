@@ -14,8 +14,8 @@ export class PlacesComponent implements OnInit {
   showLegend: boolean = true;
   showLabels: boolean = true;
   legendPosition = LegendPosition.Right;
-  view: [number, number] = [1500, 620]; //for monitor
-  reducedView: [number, number] = [1500, 300]; //for monitor
+  view = Constants.view; //for monitor
+  reducedView = Constants.reducedView; //for monitor
 
   loading = [];
   colorScheme = Constants.colorScheme;
