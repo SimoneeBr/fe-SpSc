@@ -28,7 +28,7 @@ export class BackendService {
   }
 
   public tweetsNLP(): Observable<StandardResponse> {
-    //TODO chiamare API e inserire hardcoded i dati reali
+    //query effettuata l'ultima volta 11/01
     return this.http.get<StandardResponse>(this.baseUrl + "/tweetsNLP");
   }
 

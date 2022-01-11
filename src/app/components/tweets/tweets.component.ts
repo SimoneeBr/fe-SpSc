@@ -161,28 +161,25 @@ export class TweetsComponent implements OnInit {
   }
 
   tweetsNLP(): void {
+    // query effettuata l'ultima volta 11/01
     this.loading[8] = true;
     this.chartObject[8] = [];
     let obj1 = {
       "name": "POSITIVE TWEETS",
-      "value": 792
+      "value": 967
     };
     this.chartObject[8].push(obj1);
     let obj2 = {
       "name": "NEUTRAL TWEETS",
-      "value": 321
+      "value": 1542
     };
     this.chartObject[8].push(obj2);
     let obj3 = {
       "name": "NEGATIVE TWEETS",
-      "value": 506
+      "value": 260
     };
     this.chartObject[8].push(obj3);
     this.loading[8] = false;
-    //TODO make chart of this query
-    // this.beService.tweetsNLP().subscribe((response) => {
-    //
-    // });
   }
 
   valByID($event): void {
