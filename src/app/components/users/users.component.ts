@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
 
   unitsAllVerifiedVisitors = "All Verified Visitors"
   unitsAllVisitors = "All Visitors"
-  total = 700;
+  total = 100;
 
   colorScheme = Constants.colorScheme;
 
