@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   view: [number, number] = [1500, 620]; //for monitor
   reducedView: [number, number] = [1500, 300]; //for monitor
 
-  loading = [true, true, true]; //FIXME populate this array in constructor
+  loading = [];
 
   chartObject: any[] = [];
 
@@ -37,6 +37,7 @@ export class UsersComponent implements OnInit {
   yAxisLabel = 'Visitors';
 
   constructor(private beService: BackendService) {
+    this.loading = new Array(3).fill(true);
   }
 
   ngOnInit(): void {

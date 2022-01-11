@@ -18,7 +18,7 @@ export class TweetsComponent implements OnInit {
   view: [number, number] = [1500, 620]; //for monitor
   reducedView: [number, number] = [1500, 300]; //for monitor
 
-  loading = [true, true, true, true, true, true, true, true, true]; //FIXME populate this array in constructor
+  loading = [];
 
   chartObject: any[] = [];
 
@@ -29,7 +29,7 @@ export class TweetsComponent implements OnInit {
   colorScheme = Constants.colorScheme;
 
   constructor(private beService: BackendService) {
-
+    this.loading = new Array(9).fill(true);
   }
 
   ngOnInit(): void {
@@ -156,6 +156,24 @@ export class TweetsComponent implements OnInit {
   }
 
   tweetsNLP(): void {
+    this.loading[8] = true;
+    this.chartObject[8] = [];
+    let obj1 = {
+      "name": "POSITIVE TWEETS",
+      "value": 792
+    };
+    this.chartObject[8].push(obj1);
+    let obj2 = {
+      "name": "NEUTRAL TWEETS",
+      "value": 321
+    };
+    this.chartObject[8].push(obj2);
+    let obj3 = {
+      "name": "NEGATIVE TWEETS",
+      "value": 506
+    };
+    this.chartObject[8].push(obj3);
+    this.loading[8] = false;
     //TODO make chart of this query
     // this.beService.tweetsNLP().subscribe((response) => {
     //

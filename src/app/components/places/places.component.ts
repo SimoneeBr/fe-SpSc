@@ -17,13 +17,14 @@ export class PlacesComponent implements OnInit {
   view: [number, number] = [1500, 620]; //for monitor
   reducedView: [number, number] = [1500, 300]; //for monitor
 
-  loading = [true, true, true]; //FIXME populate this array in constructor
+  loading = [];
   colorScheme = Constants.colorScheme;
   chartObject: any[] = [];
   unitsItalianVisitors = "Tweets By Italian Visitors"
   total = 15000;
 
   constructor(private beService: BackendService) {
+    this.loading = new Array(3).fill(true);
   }
 
   ngOnInit(): void {

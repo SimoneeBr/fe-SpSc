@@ -1,4 +1,3 @@
 export class Constants {
-  static colorScheme = ["vivid", "natural", "cool", "air", "ocean", "forest", "horizon", "picnic", "nightLights"];
-
+  static colorScheme = ["picnic", "natural", "cool", "air", "ocean", "forest", "horizon", "nightLights", "vivid"];
 }
