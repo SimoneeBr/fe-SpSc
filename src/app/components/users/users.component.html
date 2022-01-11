@@ -1,32 +1,46 @@
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel id="toggle-1" title="All Verified Visitors" (shown)="allVerifiedVisitors()">
+  <ngb-panel id="toggle-1" title="All Verified Visitors" (shown)="allVerifiedVisitors()" (hidden)="loading[0]=true">
+
     <ng-template ngbPanelContent>
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-      labore sustainable VHS.
+      <ngx-charts-linear-gauge
+        *ngIf="!loading[0]"
+        [view]="reducedView"
+        [scheme]="colorScheme[0]"
+        [value]="chartObject[0]"
+        [previousValue]="total"
+        [units]="unitsAllVerifiedVisitors">
+      </ngx-charts-linear-gauge>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-2" title="All Visitors" (shown)="allVisitors()">
+  <ngb-panel id="toggle-2" title="All Visitors" (shown)="allVisitors()" (hidden)="loading[1]=true">
     <ng-template ngbPanelContent>
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-      labore sustainable VHS.
+      <ngx-charts-linear-gauge
+        *ngIf="!loading[1]"
+        [view]="reducedView"
+        [scheme]="colorScheme[1]"
+        [value]="chartObject[1]"
+        [previousValue]="total"
+        [units]="unitsAllVisitors">
+      </ngx-charts-linear-gauge>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-3" title="All Visitors By Day" (shown)="allVisitorsByDay()">
+  <ngb-panel id="toggle-3" title="All Visitors By Day" (shown)="allVisitorsByDay()" (hidden)="loading[2]=true">
     <ng-template ngbPanelContent>
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-      labore sustainable VHS.
+      <ngx-charts-bar-vertical
+        *ngIf="!loading[2]"
+        [view]="view"
+        [scheme]="colorScheme[2]"
+        [results]="chartObject[2]"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [showGridLines]="gridLines"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+      </ngx-charts-bar-vertical>
     </ng-template>
   </ngb-panel>
 

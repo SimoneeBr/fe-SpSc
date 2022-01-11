@@ -14,6 +14,7 @@ import {PlacesComponent} from './components/places/places.component';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxChartsModule} from "@swimlane/ngx-charts";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {NgxChartsModule} from "@swimlane/ngx-charts";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
     HttpClientModule,

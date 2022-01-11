@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {BackendService} from "../../service/backend.service";
 
 @Component({
   selector: 'app-entry-page',
@@ -8,13 +7,10 @@ import {BackendService} from "../../service/backend.service";
 })
 export class EntryPageComponent implements OnInit {
 
-  constructor(private beService: BackendService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.beService.countryOfVisitors().subscribe(
-      l => console.log(l)
-    );
   }
 
 }
