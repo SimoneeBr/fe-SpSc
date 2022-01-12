@@ -1,5 +1,5 @@
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel id="toggle-1" title="All Visitors | La query restituisce il numero di utenti generici visitatori dell'expo"
+  <ngb-panel id="toggle-1" title="All Visitors - la query restituisce il numero di utenti generici visitatori dell'expo"
              (shown)="allVisitors()" (hidden)="loading[1]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-linear-gauge
@@ -13,7 +13,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-2"
-             title="All Verified Visitors | La query restituisce il numero di utenti verificati visitatori dell'expo"
+             title="All Verified Visitors - la query restituisce il numero di utenti verificati visitatori dell'expo"
              (shown)="allVerifiedVisitors()" (hidden)="loading[0]=true">
 
     <ng-template ngbPanelContent>
@@ -28,7 +28,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-3"
-             title="All Visitors By Day | La query restituisce il numero di utenti generici, visitatori dell'expo, suddivisi per data"
+             title="All Visitors By Day - la query restituisce il numero di utenti generici, visitatori dell'expo, suddivisi per data"
              (shown)="allVisitorsByDay()" (hidden)="loading[2]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-bar-vertical

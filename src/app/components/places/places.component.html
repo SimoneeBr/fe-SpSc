@@ -1,6 +1,6 @@
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel id="toggle-1"
-             title="Country Of Tweets | La query restituisce la top 10 dei paesi da cui sono stati pubblicati i tweet"
+             title="Country Of Tweets - la query restituisce la top 10 dei paesi da cui sono stati pubblicati i tweet"
              (shown)="countryOfTweets()" (hidden)="loading[0]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[0]"
@@ -17,7 +17,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-2"
-             title="Country Of Visitors | La query restituisce la top 10 dei paesi da cui provengono gli utenti"
+             title="Country Of Visitors - la query restituisce la top 10 dei paesi da cui provengono gli utenti"
              (shown)="countryOfVisitors()" (hidden)="loading[1]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[1]"
@@ -34,7 +34,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-3"
-             title="All Italian Tweets | La query restituisce il numero di tweet prodotti da utenti italiani, visitatori dell'expo"
+             title="All Italian Tweets - la query restituisce il numero di tweet prodotti da utenti italiani, visitatori dell'expo"
              (shown)="italianTweets()" (hidden)="loading[2]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-linear-gauge

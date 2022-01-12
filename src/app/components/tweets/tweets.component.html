@@ -1,6 +1,6 @@
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel id="toggle-1"
-             title="Most Used Devices for Tweets | La query restituisce i dispisitivi più utilizzati per pubblicare tweet"
+             title="Most Used Devices for Tweets - la query restituisce i dispisitivi più utilizzati per pubblicare tweet"
              (shown)="deviceOfTweets()" (hidden)="loading[0]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[0]"
@@ -16,7 +16,7 @@
       </ngx-charts-pie-chart>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-2" title="Like Count | La query restituisce la top 10 dei tweet con più like"
+  <ngb-panel id="toggle-2" title="Like Count - la query restituisce la top 10 dei tweet con più like"
              (shown)="like_count()" (hidden)="loading[1]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[1]"
@@ -33,7 +33,7 @@
       </ngx-charts-pie-chart>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-3" title="Retweet Count | La query restituisce la top 10 dei tweet con più retweet"
+  <ngb-panel id="toggle-3" title="Retweet Count - la query restituisce la top 10 dei tweet con più retweet"
              (shown)="retweet_count()" (hidden)="loading[2]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[2]"
@@ -50,7 +50,7 @@
       </ngx-charts-pie-chart>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-4" title="Quote Count | La query restituisce la top 10 dei tweet con più quote"
+  <ngb-panel id="toggle-4" title="Quote Count - la query restituisce la top 10 dei tweet con più quote"
              (shown)="quote_count()" (hidden)="loading[3]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[3]"
@@ -67,7 +67,7 @@
       </ngx-charts-pie-chart>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-5" title="Reply Count | La query restituisce la top 10 dei tweet con più reply"
+  <ngb-panel id="toggle-5" title="Reply Count - la query restituisce la top 10 dei tweet con più reply"
              (shown)="reply_count()" (hidden)="loading[4]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-pie-chart *ngIf="!loading[4]"
@@ -84,7 +84,7 @@
       </ngx-charts-pie-chart>
     </ng-template>
   </ngb-panel>
-  <ngb-panel id="toggle-6" title="Most Frequent Hashtag | La query restituisce la top 10 degli hashtag più utilizzati"
+  <ngb-panel id="toggle-6" title="Most Frequent Hashtag - la query restituisce la top 10 degli hashtag più utilizzati"
              (shown)="mostFrequentHashtag()" (hidden)="loading[5]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-number-card *ngIf="!loading[5]"
@@ -95,7 +95,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-7"
-             title="All Tweets By Verified Visitors | La query restituisce il numero di tweet prodotti da utenti verificati, visitatori dell'expo"
+             title="All Tweets By Verified Visitors - la query restituisce il numero di tweet prodotti da utenti verificati, visitatori dell'expo"
              (shown)="allTweetsByVerifiedVisitor()"
              (hidden)="loading[6]=true">
     <ng-template ngbPanelContent>
@@ -110,7 +110,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-8"
-             title="All Italian Tweets | La query restituisce il numero di tweet prodotti da utenti italiani, visitatori dell'expo"
+             title="All Italian Tweets - la query restituisce il numero di tweet prodotti da utenti italiani, visitatori dell'expo"
              (shown)="italianTweets()" (hidden)="loading[7]=true">
     <ng-template ngbPanelContent>
       <ngx-charts-linear-gauge
@@ -124,7 +124,7 @@
     </ng-template>
   </ngb-panel>
   <ngb-panel id="toggle-9"
-             title="Tweets Sentiment Analysis | La query restituisce una classificazione dei tweet in lingua inglese suddivisi in POSITIVE, NEUTRAL, NEGATIVE"
+             title="Tweets Sentiment Analysis - la query restituisce una classificazione dei tweet in lingua inglese suddivisi in POSITIVE, NEUTRAL, NEGATIVE"
              (shown)="tweetsNLP()">
     <ng-template ngbPanelContent>
       <ngx-charts-tree-map
