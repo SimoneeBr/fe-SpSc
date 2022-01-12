@@ -166,17 +166,17 @@ export class TweetsComponent implements OnInit {
     this.chartObject[8] = [];
     let obj1 = {
       "name": "POSITIVE TWEETS",
-      "value": 967
+      "value": 5684
     };
     this.chartObject[8].push(obj1);
     let obj2 = {
       "name": "NEUTRAL TWEETS",
-      "value": 1542
+      "value": 10095
     };
     this.chartObject[8].push(obj2);
     let obj3 = {
       "name": "NEGATIVE TWEETS",
-      "value": 260
+      "value": 2101
     };
     this.chartObject[8].push(obj3);
     this.loading[8] = false;
