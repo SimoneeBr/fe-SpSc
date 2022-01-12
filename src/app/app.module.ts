@@ -12,10 +12,11 @@ import {UsersComponent} from './components/users/users.component';
 import {TweetsComponent} from './components/tweets/tweets.component';
 import {PlacesComponent} from './components/places/places.component';
 import {CommonModule, DatePipe} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgxChartsModule} from "@swimlane/ngx-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { NgbdModalContentComponent } from './components/ngbd-modal-content/ngbd-modal-content.component';
+import {HttpRequestInterceptor} from "./interceptor/http-request.interceptor";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { NgbdModalContentComponent } from './components/ngbd-modal-content/ngbd-
     FontAwesomeModule,
     NgxChartsModule,
   ],
-  providers: [DatePipe],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true},DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

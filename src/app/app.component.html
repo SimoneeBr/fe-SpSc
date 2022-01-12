@@ -1,11 +1,25 @@
-<app-header></app-header>
-<div class="container-fluid" style="margin-top: 2rem">
-  <div class="row">
-    <div class="col-md-1">
-      <app-side-menu></app-side-menu>
-    </div>
-    <div class="col-md-11" style="margin-bottom: 2rem">
-      <router-outlet></router-outlet>
+<!-- Loading spinner -->
+<div *ngIf="loading" class="loading-container flex-content-center">
+  <div class="spinner-border text-primary spinnerCustom" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- the application -->
+<div class="site-container">
+  <div class="site-header">
+    <app-header></app-header>
+  </div>
+  <div class="site-content">
+    <div class="container-fluid" style="margin-top: 2rem">
+      <div class="row">
+        <div class="col-md-1">
+          <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-md-11" style="margin-bottom: 2rem">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
   </div>
 </div>
