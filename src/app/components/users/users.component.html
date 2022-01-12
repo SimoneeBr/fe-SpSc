@@ -49,4 +49,26 @@
     </ng-template>
   </ngb-panel>
 
+  <ngb-panel id="toggle-4"
+             title="All Users By Day - la query restituisce il numero di utenti suddivisi per data"
+             (shown)="allVisitorsByDayWithoutGeo()" (hidden)="loading[3]=true">
+    <ng-template ngbPanelContent>
+      <ngx-charts-bar-vertical
+        *ngIf="!loading[3]"
+        [view]="view"
+        [scheme]="colorScheme[3]"
+        [results]="chartObject[3]"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [showGridLines]="gridLines"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+      </ngx-charts-bar-vertical>
+    </ng-template>
+  </ngb-panel>
+
 </ngb-accordion>

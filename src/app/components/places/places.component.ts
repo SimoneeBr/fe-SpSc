@@ -21,7 +21,7 @@ export class PlacesComponent implements OnInit {
   colorScheme = Constants.colorScheme;
   chartObject: any[] = [];
   unitsItalianVisitors = "Tweets By Italian Visitors"
-  total = 15000;
+  total = 1000;
 
   constructor(private beService: BackendService) {
     this.loading = new Array(3).fill(true);

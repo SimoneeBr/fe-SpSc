@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
 
   unitsAllVerifiedVisitors = "All Verified Visitors"
   unitsAllVisitors = "All Visitors"
-  total = 100;
+  total = 250;
 
   colorScheme = Constants.colorScheme;
 
@@ -37,7 +37,7 @@ export class UsersComponent implements OnInit {
   yAxisLabel = 'Visitors';
 
   constructor(private beService: BackendService) {
-    this.loading = new Array(3).fill(true);
+    this.loading = new Array(4).fill(true);
   }
 
   ngOnInit(): void {
@@ -74,14 +74,35 @@ export class UsersComponent implements OnInit {
         };
 
         this.chartObject[2].push(obj);
-        this.chartObject[2].sort(function (a, b) {
+        this.chartObject[2].sort((a, b) => {
           a = a.name.split('/').reverse().join('');
           b = b.name.split('/').reverse().join('');
           return a > b ? 1 : a < b ? -1 : 0;
-          // return a.localeCompare(b);         // <-- alternative
         });
       }
       this.loading[2] = false;
+    });
+  }
+
+  allVisitorsByDayWithoutGeo(): void {
+    this.beService.allVisitorsByDayWithoutGeo().subscribe((response) => {
+      let data = response.data;
+      this.chartObject[3] = [];
+      for (const d of data) {
+        let x = JSON.parse(d);
+        let obj = {
+          "name": x.formatted_data,
+          "value": x.count
+        };
+
+        this.chartObject[3].push(obj);
+        this.chartObject[3].sort((a, b) => {
+          a = a.name.split('/').reverse().join('');
+          b = b.name.split('/').reverse().join('');
+          return a > b ? 1 : a < b ? -1 : 0;
+        });
+      }
+      this.loading[3] = false;
     });
   }
 }
